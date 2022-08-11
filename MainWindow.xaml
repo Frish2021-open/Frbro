@@ -1,0 +1,41 @@
+﻿<Window x:Class="FrBrowen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrBrowen"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d"
+        Title="Frish2021浏览器" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="685*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40px"/>
+                <ColumnDefinition Width="40px"/>
+                <ColumnDefinition Width="40px"/>
+                <ColumnDefinition Width="40px"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="40px"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="←" Grid.Column="0" Width="40px" Height="30px" BorderThickness="0" Foreground="Black" FontSize="18"/>
+            <Button Content="→" Grid.Column="1" Width="40px" Height="30px" BorderThickness="0" Foreground="Black" FontSize="18"/>
+            <Button Content="⟳" Grid.Column="2" Width="40px" Height="30px" BorderThickness="0" Foreground="Black" FontSize="18"/>
+            <Button Content="⌂" Grid.Column="3" Width="40px" Height="30px" BorderThickness="0" Foreground="Black" FontSize="18"/>
+
+            <TextBox x:Name="Text" Grid.Column="4" Background="LightBlue" Foreground="Black" FontSize="20" FontWeight="SemiBold" Margin="14,0,73,0"/>
+            <Button Content="关于" Grid.Column="4" HorizontalAlignment="Left" Height="30" Margin="519,0,0,0" VerticalAlignment="Top" Width="54"/>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="Gray" Margin="0,0,92,0"/>
+
+        <cefSharp:ChromiumWebBrowser x:Name="Chrome" Address="frish2021.gq" Grid.Row="1" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
